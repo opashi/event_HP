@@ -200,6 +200,8 @@
     </footer>
 
     <script>
+      var preloaderScriptStartedAt = Date.now();
+
       document.addEventListener("DOMContentLoaded", function () {
         var entryGate = document.getElementById("entryGate");
         var doorButtons = document.querySelectorAll(".door");
@@ -229,10 +231,17 @@
       window.addEventListener("load", function () {
         var loader = document.getElementById("preloader");
         if (!loader) return;
-        loader.classList.add("is-hidden");
+
+        var minVisibleMs = 900;
+        var elapsedMs = Date.now() - preloaderScriptStartedAt;
+        var waitMs = Math.max(0, minVisibleMs - elapsedMs);
+
         window.setTimeout(function () {
-          loader.remove();
-        }, 450);
+          loader.classList.add("is-hidden");
+          window.setTimeout(function () {
+            loader.remove();
+          }, 450);
+        }, waitMs);
       });
     </script>
   </body>
