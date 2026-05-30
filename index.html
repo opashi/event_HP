@@ -243,6 +243,7 @@
         var entryGate = document.getElementById("entryGate");
         var doorButtons = document.querySelectorAll(".door");
         if (skipIntro) {
+          document.body.classList.add("is-entered");
           if (entryGate) {
             entryGate.remove();
           }
