@@ -8,6 +8,20 @@
       name="description"
       content="LINK MOVEは、思考・行動・繋がりを育む学生イベントの公式ページです。"
     />
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get("skipIntro") === "1") {
+          document.documentElement.classList.add("skip-intro");
+        }
+      })();
+    </script>
+    <style>
+      html.skip-intro #preloader,
+      html.skip-intro #entryGate {
+        display: none !important;
+      }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -67,9 +81,9 @@
             <p class="lm-date">2026.8.9 SUN｜TOKYO</p>
             <p class="lead">医療・治療・トレーナーを目指す学生200名が集まる1日</p>
             <div class="lm-actions">
-              <a class="btn btn-primary" href="#apply">参加申し込み</a>
+              <a class="btn btn-primary" href="https://lin.ee/" target="_blank" rel="noopener noreferrer">参加申し込み</a>
               <a class="btn btn-pop" href="#event-outline">イベント詳細を見る</a>
-              <a class="btn btn-sun" href="#speakers">登壇者を見る</a>
+              <a class="btn btn-sun" href="program-lecture.html">登壇者を見る</a>
             </div>
           </div>
           <div class="lm-visual" aria-label="イベントイメージ">
@@ -126,37 +140,37 @@
         </div>
       </section>
 
-      <section class="section" id="guides">
+      <section class="section" id="program-pages">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">GUIDE</p>
-            <h2>個別ページへの導線</h2>
+            <p class="eyebrow">DETAIL PAGES</p>
+            <h2>実施する内容</h2>
           </div>
-          <div class="guide-grid">
-            <article class="guide-card" id="speakers">
-              <h3>登壇者紹介</h3>
-              <p>業界で挑戦する先輩たちの紹介。</p>
-            </article>
-            <article class="guide-card">
-              <h3>タイムスケジュール</h3>
-              <p>3時間の流れを確認。</p>
-            </article>
-            <article class="guide-card">
+          <div class="program-link-grid">
+            <a class="program-link-card" href="program-lecture.html">
+              <p class="step">01</p>
+              <h3>講義</h3>
+              <p>講義のテーマ・登壇者情報を掲載。</p>
+              <span class="view-more">View More→</span>
+            </a>
+            <a class="program-link-card" href="program-award.html">
+              <p class="step">02</p>
+              <h3>表彰・学生スピーチ</h3>
+              <p>表彰企画と学生スピーチの詳細。</p>
+              <span class="view-more">View More→</span>
+            </a>
+            <a class="program-link-card" href="program-treatment.html">
+              <p class="step">03</p>
               <h3>施術体験会</h3>
-              <p>体験できる内容・参加方法。</p>
-            </article>
-            <article class="guide-card">
-              <h3>学生表彰</h3>
-              <p>表彰企画とスピーチ内容。</p>
-            </article>
-            <article class="guide-card">
-              <h3>アクセス</h3>
-              <p>会場情報・最寄駅・地図。</p>
-            </article>
-            <article class="guide-card" id="apply">
-              <h3>申し込み</h3>
-              <p>参加フォームへ。</p>
-            </article>
+              <p>体験内容・流れ・担当登壇者を紹介。</p>
+              <span class="view-more">View More→</span>
+            </a>
+            <a class="program-link-card" href="program-work.html">
+              <p class="step">04</p>
+              <h3>夢を描くワーク</h3>
+              <p>ワークの進め方とメンター情報を掲載。</p>
+              <span class="view-more">View More→</span>
+            </a>
           </div>
         </div>
       </section>
@@ -181,6 +195,24 @@
             <article class="timeline-row"><time>15:55</time><p>クロージング</p></article>
             <article class="timeline-row"><time>16:00</time><p>終了</p></article>
           </div>
+
+          <div class="event-facts">
+            <article class="fact-card">
+              <h3>アクセス</h3>
+              <p>会場: 東京都内イベントホール（TOKYO）</p>
+              <p>最寄駅: JR山手線・地下鉄 各線から徒歩圏内</p>
+            </article>
+            <article class="fact-card">
+              <h3>参加費</h3>
+              <p>学生: 1,000円（税込）</p>
+              <p>当日受付にてお支払い（現金 / キャッシュレス対応予定）</p>
+            </article>
+            <article class="fact-card">
+              <h3>申し込み</h3>
+              <p>参加申し込みはLINEから受け付けます。</p>
+              <p><a class="line-inline-link" href="https://lin.ee/" target="_blank" rel="noopener noreferrer">LINEで予約する</a></p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -199,12 +231,23 @@
       </div>
     </footer>
 
+    <a class="mobile-line-cta" href="https://lin.ee/" target="_blank" rel="noopener noreferrer" aria-label="LINEで予約する">
+      LINE予約する
+    </a>
+
     <script>
       var preloaderScriptStartedAt = Date.now();
+      var skipIntro = document.documentElement.classList.contains("skip-intro");
 
       document.addEventListener("DOMContentLoaded", function () {
         var entryGate = document.getElementById("entryGate");
         var doorButtons = document.querySelectorAll(".door");
+        if (skipIntro) {
+          if (entryGate) {
+            entryGate.remove();
+          }
+          return;
+        }
         if (!entryGate || !doorButtons.length) return;
 
         doorButtons.forEach(function (button) {
@@ -231,6 +274,10 @@
       window.addEventListener("load", function () {
         var loader = document.getElementById("preloader");
         if (!loader) return;
+        if (skipIntro) {
+          loader.remove();
+          return;
+        }
 
         var minVisibleMs = 900;
         var elapsedMs = Date.now() - preloaderScriptStartedAt;
