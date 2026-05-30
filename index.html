@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LINK MOVE | HOME</title>
+    <meta
+      name="description"
+      content="LINK MOVEは、思考・行動・繋がりを育む学生イベントの公式ページです。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="preloader" id="preloader" aria-label="読み込み中">
+      <img src="images/logo.png" alt="LINK MOVE ロゴ" class="preloader-logo" />
+    </div>
+
+    <div class="bg-layer bg-layer-1" aria-hidden="true"></div>
+    <div class="bg-layer bg-layer-2" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="HOMEへ移動">
+          <span class="brand-mark">
+            <img src="images/logo.png" alt="LINK MOVE ロゴ" />
+          </span>
+          <span class="brand-text">LINK MOVE</span>
+        </a>
+      </div>
+    </header>
+
+    <section class="entry-gate" id="entryGate" aria-label="入場UI">
+      <div class="entry-panel">
+        <p class="eyebrow">ENTRANCE</p>
+        <h2>3つの扉から、未来へ進む</h2>
+        <p>THINK / MOVE / LINK の扉をクリックするとメインHPへ遷移します。</p>
+        <div class="door-grid">
+          <button class="door door-think" data-jump="#home" type="button">
+            <span class="door-title">THINK</span>
+            <span class="door-copy">自分の未来を考える</span>
+          </button>
+          <button class="door door-move" data-jump="#home" type="button">
+            <span class="door-title">MOVE</span>
+            <span class="door-copy">一歩踏み出す行動を学ぶ</span>
+          </button>
+          <button class="door door-link" data-jump="#home" type="button">
+            <span class="door-title">LINK</span>
+            <span class="door-copy">仲間・先輩・業界と繋がる</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section class="lm-hero" id="home">
+        <div class="container lm-hero-grid">
+          <div class="lm-copy">
+            <p class="eyebrow">LINK MOVE</p>
+            <h1>思考・行動・繋がりを育む学生イベント</h1>
+            <p class="lm-date">2026.8.9 SUN｜TOKYO</p>
+            <p class="lead">医療・治療・トレーナーを目指す学生200名が集まる1日</p>
+            <div class="lm-actions">
+              <a class="btn btn-primary" href="#apply">参加申し込み</a>
+              <a class="btn btn-pop" href="#event-outline">イベント詳細を見る</a>
+              <a class="btn btn-sun" href="#speakers">登壇者を見る</a>
+            </div>
+          </div>
+          <div class="lm-visual" aria-label="イベントイメージ">
+            <img src="images/pop.jpg" alt="LINK MOVE イベントのイメージ" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">ABOUT</p>
+            <h2>LINK MOVEとは</h2>
+          </div>
+          <div class="statement-box">
+            <p>
+              LINK MOVEは、医療・治療・トレーナー業界を目指す学生が、「考える」「動く」「繋がる」を体験する学生イベントです。
+            </p>
+            <p>
+              ただ講義を聞くだけではなく、先輩治療家・経営者・トレーナーとの出会い、施術体験、夢を描くワークを通して、将来の選択肢を広げる時間をつくります。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="event-outline">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">PROGRAM</p>
+            <h2>イベント全体像</h2>
+          </div>
+          <div class="outline-grid">
+            <article class="outline-card">
+              <p class="step">01</p>
+              <h3>講義</h3>
+              <p>柔道整復師、理学療法士、トレーナー、整体師、経営者による15分講義。</p>
+            </article>
+            <article class="outline-card">
+              <p class="step">02</p>
+              <h3>表彰・学生スピーチ</h3>
+              <p>学生5名の表彰とスピーチ。</p>
+            </article>
+            <article class="outline-card">
+              <p class="step">03</p>
+              <h3>施術体験会</h3>
+              <p>現場で活躍する治療家の技術を体験。</p>
+            </article>
+            <article class="outline-card">
+              <p class="step">04</p>
+              <h3>夢を描くワーク</h3>
+              <p>行動の大切さを学び、全員が未来を描く時間。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="guides">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">GUIDE</p>
+            <h2>個別ページへの導線</h2>
+          </div>
+          <div class="guide-grid">
+            <article class="guide-card" id="speakers">
+              <h3>登壇者紹介</h3>
+              <p>業界で挑戦する先輩たちの紹介。</p>
+            </article>
+            <article class="guide-card">
+              <h3>タイムスケジュール</h3>
+              <p>3時間の流れを確認。</p>
+            </article>
+            <article class="guide-card">
+              <h3>施術体験会</h3>
+              <p>体験できる内容・参加方法。</p>
+            </article>
+            <article class="guide-card">
+              <h3>学生表彰</h3>
+              <p>表彰企画とスピーチ内容。</p>
+            </article>
+            <article class="guide-card">
+              <h3>アクセス</h3>
+              <p>会場情報・最寄駅・地図。</p>
+            </article>
+            <article class="guide-card" id="apply">
+              <h3>申し込み</h3>
+              <p>参加フォームへ。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="timeline">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">TIMETABLE</p>
+            <h2>タイムスケジュール</h2>
+          </div>
+          <div class="timeline-list">
+            <article class="timeline-row"><time>13:00</time><p>オープニング</p></article>
+            <article class="timeline-row"><time>13:10</time><p>講義①</p></article>
+            <article class="timeline-row"><time>13:25</time><p>講義②</p></article>
+            <article class="timeline-row"><time>13:40</time><p>講義③</p></article>
+            <article class="timeline-row"><time>13:55</time><p>講義④</p></article>
+            <article class="timeline-row"><time>14:10</time><p>講義⑤</p></article>
+            <article class="timeline-row"><time>14:25</time><p>講義⑥</p></article>
+            <article class="timeline-row"><time>14:40</time><p>学生表彰・スピーチ</p></article>
+            <article class="timeline-row"><time>15:05</time><p>施術体験会</p></article>
+            <article class="timeline-row"><time>15:35</time><p>夢を描くワーク</p></article>
+            <article class="timeline-row"><time>15:55</time><p>クロージング</p></article>
+            <article class="timeline-row"><time>16:00</time><p>終了</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="message">
+        <div class="container message-box">
+          <p class="message-lead">夢は、知った瞬間に広がる。仲間と出会った瞬間に、動き出す。</p>
+          <p>LINK MOVEは、学生が未来にワクワクし、一歩踏み出すきっかけをつくるイベントです。</p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <small>© 2026 LINK MOVE</small>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var entryGate = document.getElementById("entryGate");
+        var doorButtons = document.querySelectorAll(".door");
+        if (!entryGate || !doorButtons.length) return;
+
+        doorButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            var jumpSelector = button.getAttribute("data-jump") || "#home";
+            var jumpTarget = document.querySelector(jumpSelector);
+
+            entryGate.classList.add("is-closed");
+            document.body.classList.add("is-entered");
+
+            window.setTimeout(function () {
+              if (jumpTarget) {
+                jumpTarget.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }, 220);
+
+            window.setTimeout(function () {
+              entryGate.remove();
+            }, 600);
+          });
+        });
+      });
+
+      window.addEventListener("load", function () {
+        var loader = document.getElementById("preloader");
+        if (!loader) return;
+        loader.classList.add("is-hidden");
+        window.setTimeout(function () {
+          loader.remove();
+        }, 450);
+      });
+    </script>
+  </body>
+</html>
